@@ -51,6 +51,15 @@
 
     <!-- youtube.js -->
     <!-- <script defer src="./youtube.js"></script> -->
+
+    <!-- Scroll Magic -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+      integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <!-- main.js -->
     <script defer src="./main.js"></script>
 
@@ -537,11 +546,15 @@
     </section>
 
     <!-- SEASON_PRODUCT -->
-    <section class="season-product">
+    <section class="season-product scroll-spy">
       <div class="inner">
         <img src="./images/floating3.png" alt="floating3" class="floating3" />
-        <img src="./images/season_product_image.png" alt="" class="product" />
-        <div class="text-group">
+        <img
+          src="./images/season_product_image.png"
+          alt=""
+          class="product back-to-position to-right delay-1"
+        />
+        <div class="text-group back-to-position to-left delay-2">
           <img
             src="./images/season_product_text1.png"
             alt=""
@@ -558,21 +571,39 @@
     </section>
 
     <!-- RESERVE-COFFEE -->
-    <section class="reserve-coffee">
+    <section class="reserve-coffee scroll-spy">
       <div class="inner">
-        <img src="./images/reserve_logo.png" alt="" class="reserve-logo" />
+        <img
+          src="./images/reserve_logo.png"
+          alt=""
+          class="reserve-logo back-to-position to-right delay-1"
+        />
         <div class="text-group">
-          <img src="./images/reserve_text.png" alt="" class="reserve-text" />
-          <a href="javascript:void(0)" class="btn btn--gold">자세히 보기</a>
+          <img
+            src="./images/reserve_text.png"
+            alt=""
+            class="reserve-text back-to-position to-right delay-2"
+          />
+          <div class="more">
+            <a
+              href="javascript:void(0)"
+              class="btn btn--gold back-to-position to-right delay-3"
+              >자세히 보기</a
+            >
+          </div>
         </div>
-        <img src="./images/reserve_image.png" alt="" class="reserve-image" />
+        <img
+          src="./images/reserve_image.png"
+          alt=""
+          class="reserve-image back-to-position to-left delay-3"
+        />
       </div>
     </section>
 
     <!-- PICK-YOUR-FAVORITE -->
-    <section class="pick-your-favorite">
+    <section class="pick-your-favorite scroll-spy">
       <div class="inner">
-        <div class="text-group">
+        <div class="text-group back-to-position to-right delay-1">
           <img src="./images/favorite_text1.png" alt="" class="title" />
           <img src="./images/favorite_text2.png" alt="" class="desc" />
           <a href="javascript:void(0)" class="btn btn--white">자세히 보기</a>
@@ -590,6 +621,32 @@
           <div class="back">
             <img src="./images/reserve_store_medal_back.png" alt="" />
             <a href="javascript:void(0)" class="btn">매장 보기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FIND SECTION -->
+    <section class="find_store scroll-spy">
+      <div class="inner">
+        <img src="./images/find_store_texture1.png" alt="" class="texture1" />
+        <img src="./images/find_store_texture2.png" alt="" class="texture2" />
+        <img
+          src="./images/find_store_picture1.jpg"
+          alt=""
+          class="picture picture1 back-to-position to-right delay-1"
+        />
+        <img
+          src="./images/find_store_picture2.jpg"
+          alt=""
+          class="picture picture2 back-to-position to-right delay-2"
+        />
+
+        <div class="text-group back-to-position to-left delay-3">
+          <img src="./images/find_store_text1.png" alt="" class="title" />
+          <img src="./images/find_store_text2.png" alt="" class="desc" />
+          <div class="more back-to-position to-left delay-3">
+            <a href="javascript:void(0)" class="btn">매장 찾기</a>
           </div>
         </div>
       </div>
