@@ -50,8 +50,6 @@ const testSwiper = new Swiper(".notice .inner .swiper", {
   loop: true,
 });
 
-const practiceSwiper = new Swiper(".swiper", {});
-
 new Swiper(".promotion .swiper", {
   direction: "horizontal",
   autoplay: { delay: 5000 },
@@ -134,4 +132,16 @@ spyEls.forEach(function (spyEl) {
   })
     .setClassToggle(spyEl, "show")
     .addTo(new ScrollMagic.Controller());
+});
+
+new Swiper(".awards .swiper", {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+
+  navigation: {
+    prevEl: ".awards .swiper-prev",
+    nextEl: ".awards .swiper-next",
+  },
 });

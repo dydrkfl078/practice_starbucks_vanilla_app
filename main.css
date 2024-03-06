@@ -4,7 +4,6 @@ body {
   color: 333;
   font-weight: 400;
   line-height: 1.4;
-  height: 6000px;
   font-family: "Nanum Gothic", sans-serif;
 }
 
@@ -78,7 +77,7 @@ a {
 }
 
 .btn.btn--white:hover {
-  color: 333;
+  color: #333;
   background-color: #fff;
 }
 
@@ -864,4 +863,141 @@ header .badges .badge {
 
 .find_store .desc {
   margin-bottom: 30px;
+}
+
+/* AWARDS */
+
+.awards {
+  background-color: #272727;
+}
+
+.awards .inner {
+  padding: 40px 0;
+}
+
+.awards .swiper {
+  width: 100%;
+  height: 40px;
+}
+
+.awards .swiper-next,
+.awards .swiper-prev {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  cursor: pointer;
+  opacity: 0.3;
+  color: #fff;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.awards .swiper-next {
+  right: -100px;
+}
+
+.awards .swiper-prev {
+  left: -100px;
+}
+
+.awards .swiper-prev:hover,
+.awards .swiper-next:hover {
+  color: #333;
+  background-color: #fff;
+}
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid #333;
+  background-color: #272727;
+}
+
+footer .inner {
+  height: 400px;
+  padding: 40px 0 60px 0;
+}
+
+footer .menu {
+  display: flex;
+  justify-content: center;
+}
+footer .menu li a {
+  color: #fff;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 12px;
+  display: block;
+}
+
+footer .menu li {
+  position: relative;
+}
+
+footer .menu li::before {
+  content: "";
+  display: inline;
+  width: 3px;
+  height: 3px;
+  margin: auto;
+  background-color: #888;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1px;
+}
+
+footer .menu li:last-child::before {
+  display: none;
+}
+footer .menu li a.green {
+  color: #669900;
+}
+
+footer .btn-group {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+footer .btn-group .btn {
+  margin-right: 15px;
+  font-size: 12px;
+}
+
+footer .btn-group .btn:last-child {
+  margin-right: 0;
+}
+
+footer .info {
+  margin-top: 30px;
+  text-align: center;
+}
+
+footer .info span {
+  color: #999;
+  margin-right: 20px;
+  font-size: 12px;
+}
+
+footer .info span:last-child {
+  margin-right: 0;
+}
+
+footer .copyright {
+  color: #999;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+footer .logo {
+  margin: 30px auto 0;
 }
