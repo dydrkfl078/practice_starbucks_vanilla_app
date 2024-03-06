@@ -21,19 +21,32 @@ window.addEventListener(
   "scroll",
   _.throttle(function () {
     console.log("Scroll!");
-    if (window.scrollY > 350) {
+    if (window.scrollY > 550) {
       gsap.to(badgeEl, 0.6, {
         opacity: 0,
         display: "none",
+      });
+      gsap.to("#to-top", 0.2, {
+        x: -180,
       });
     } else {
       gsap.to(badgeEl, 0.6, {
         opacity: 1,
         display: "block",
       });
+      gsap.to("#to-top", 0.2, {
+        x: -0,
+      });
     }
   }, 300)
 );
+
+const toTopEl = document.querySelector("#to-top");
+toTopEl.addEventListener("click", function () {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+});
 
 const fadeElements = document.querySelectorAll(".visual .fade-in");
 
@@ -49,8 +62,6 @@ const testSwiper = new Swiper(".notice .inner .swiper", {
   autoplay: true,
   loop: true,
 });
-
-const practiceSwiper = new Swiper(".swiper", {});
 
 new Swiper(".promotion .swiper", {
   direction: "horizontal",
@@ -111,20 +122,21 @@ promotionToggleBtn.addEventListener("click", function () {
 function random(min, max) {
   return parseFloat(Math.random() * (max - min) + min).toFixed(2);
 }
-function floatingObject(selector) {
+function floatingObject(selector, delay, size) {
   // gsap.to(요소, 시간, 옵션);
   gsap.to(selector, {
+    delay: delay,
     duration: 2.5,
     ease: "power1.inOut",
     repeat: -1,
     yoyo: true,
-    y: random(30, 145),
+    y: 100,
   });
 }
 
-floatingObject(".floating1");
-floatingObject(".floating2");
-floatingObject(".floating3");
+floatingObject(".floating1", random(1, 2), 100);
+floatingObject(".floating2", random(1, 2.5), 50);
+floatingObject(".floating3", random(1, 2), 30);
 
 const spyEls = document.querySelectorAll("section.scroll-spy");
 spyEls.forEach(function (spyEl) {
@@ -135,3 +147,18 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, "show")
     .addTo(new ScrollMagic.Controller());
 });
+
+new Swiper(".awards .swiper", {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+
+  navigation: {
+    prevEl: ".awards .swiper-prev",
+    nextEl: ".awards .swiper-next",
+  },
+});
+
+const thisYear = document.querySelector(".this-year");
+thisYear.textContent = new Date().getFullYear();
