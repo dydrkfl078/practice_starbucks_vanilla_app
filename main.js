@@ -1,0 +1,127 @@
+const searchEl = document.querySelector(".search");
+const searchInputEl = searchEl.querySelector("input");
+
+searchEl.addEventListener("click", function () {
+  searchInputEl.focus();
+});
+
+searchInputEl.addEventListener("focus", function () {
+  searchEl.classList.add("focused");
+  searchInputEl.setAttribute("placeholder", "통합검색");
+});
+
+searchInputEl.addEventListener("blur", function () {
+  searchEl.classList.remove("focused");
+  searchInputEl.setAttribute("placeholder", "");
+});
+
+const badgeEl = document.querySelector("header .badges");
+
+window.addEventListener(
+  "scroll",
+  _.throttle(function () {
+    console.log("Scroll!");
+    if (window.scrollY > 350) {
+      gsap.to(badgeEl, 0.6, {
+        opacity: 0,
+        display: "none",
+      });
+    } else {
+      gsap.to(badgeEl, 0.6, {
+        opacity: 1,
+        display: "block",
+      });
+    }
+  }, 300)
+);
+
+const fadeElements = document.querySelectorAll(".visual .fade-in");
+
+fadeElements.forEach(function (fadeEl, index) {
+  gsap.to(fadeEl, 1, {
+    delay: (index + 1) * 0.7,
+    opacity: 1,
+  });
+});
+
+const testSwiper = new Swiper(".notice .inner .swiper", {
+  direction: "vertical",
+  autoplay: true,
+  loop: true,
+});
+
+const practiceSwiper = new Swiper(".swiper", {});
+
+new Swiper(".promotion .swiper", {
+  direction: "horizontal",
+  autoplay: { delay: 5000 },
+  loop: true,
+  slidesPerView: 3,
+  spaceBetween: 10,
+  centeredSlides: true,
+
+  // effect: "coverflow",
+  // coverflowEffect: {
+  //   // added
+  //   rotate: 0, // added (Rotate of the prev and next slides)
+  //   depth: 200, // added (Depth of the prev and next slides)
+  //   stretch: 30, // added (Space between the slides)
+  //   modifier: 1, // added (Multiply the values of rotate, depth, and stretch)
+  //   scale: 1, // added (Size ratio of the prev and next slides)
+  //   slideShadows: false, // added (Presence of shadow on the surfaces of the prev and next slides)
+  // },
+
+  pagination: {
+    el: ".promotion .swiper-pagination",
+    clickable: true,
+    type: "bullets",
+  },
+  navigation: {
+    prevEl: ".promotion .swiper-prev",
+    nextEl: ".promotion .swiper-next",
+  },
+  a11y: {
+    prevSlideMessage: "이전요소로 슬라이드",
+    nextSlideMessage: "다음요소로 슬라이드",
+    slideLabelMessage:
+      "총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.",
+    paginationBulletMessage: "{{index}} 번째 슬라이드로 이동하기",
+  },
+  // breakpoints: {
+  //   1500: {
+  //     slidesPerView: 3,
+  //     spaceBetween: 10,
+  //   },
+  // },
+});
+
+const promotionEl = document.querySelector(".promotion");
+const promotionToggleBtn = document.querySelector(".toggle-promotion");
+let isHidePromotion = false;
+
+promotionToggleBtn.addEventListener("click", function () {
+  isHidePromotion = !isHidePromotion;
+  if (isHidePromotion) {
+    promotionEl.classList.add("hide");
+  } else {
+    promotionEl.classList.remove("hide");
+  }
+});
+
+function random(min, max) {
+  return parseFloat(Math.random() * (max - min) + min).toFixed(2);
+}
+function floatingObject(selector) {
+  // gsap.to(요소, 시간, 옵션);
+  gsap.to(selector, {
+    duration: 2.5,
+    ease: "power1.inOut",
+    repeat: -1,
+    yoyo: true,
+    y: random(30, 145),
+  });
+}
+
+floatingObject(".floating1");
+floatingObject(".floating2");
+floatingObject(".floating3");
