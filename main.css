@@ -726,5 +726,58 @@ header .badges .badge {
 }
 
 .pick-your-favorite .text-group .desc {
-  margin-bottom: 40px;
+  margin-bottom: 35px;
+}
+
+.reserve_store {
+  background-image: url(./images/reserve_store_bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.reserve_store .inner {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reserve_store .medal {
+  height: 334px;
+  width: 334px;
+}
+
+.reserve_store .front,
+.reserve_store .back {
+  width: 334px;
+  height: 334px;
+  backface-visibility: hidden;
+  transition: 1s;
+  position: absolute;
+}
+
+.reserve_store .front {
+  transform: rotateY(0deg);
+}
+
+.reserve_store .medal:hover .front {
+  transform: rotateY(180deg);
+}
+
+.reserve_store .back {
+  transform: rotateY(180deg);
+}
+
+.reserve_store .medal:hover .back {
+  transform: rotateY(0deg);
+}
+
+.reserve_store .back .btn {
+  position: absolute;
+  top: 230px;
+  margin: auto;
+  right: 0;
+  left: 0;
 }
