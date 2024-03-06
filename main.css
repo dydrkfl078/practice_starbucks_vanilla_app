@@ -1001,3 +1001,20 @@ footer .copyright {
 footer .logo {
   margin: 30px auto 0;
 }
+
+#to-top {
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 30px;
+  right: -130px;
+  position: fixed;
+  z-index: 11;
+}
